@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - MediPlus</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" rel="stylesheet">
+    <script>
+        // Check login status when page loads
+        window.addEventListener('load', function() {
+            fetch('backend/check_login.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.loggedIn) {
+                        window.location.href = 'login.html?redirect=' + encodeURIComponent(window.location.href);
+                    } else {
+                        document.getElementById('username').textContent = data.username;
+                        document.getElementById('userInfo').style.display = 'inline';
+                    }
+                });
+        });
+    </script>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Company Logo" />
+        </div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="servics.html">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="doc.html">Doctors</a>
+            <button id="book"><a href="appoint.html">Book Appointment</a></button>
+            <span id="userInfo" style="display: none;">
+                <button onclick="logout()">Logout</button>
+            </span>
+        </div>
+    </nav>
+
+    <div id="appointmentForm">
+        <h2>Book an Appointment</h2>
+        <form action="backend/book_appointment.php" method="POST">
+            <div class="form-group">
+                <label for="doctor">Select Doctor:</label>
+                <select name="doctor_id" id="doctor" required>
+                    <!-- Populate with doctors from database -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Appointment Date:</label>
+                <input type="date" name="appointment_date" id="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Appointment Time:</label>
+                <input type="time" name="appointment_time" id="time" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason for Visit:</label>
+                <textarea name="reason" id="reason" rows="4"></textarea>
+            </div>
+            <button type="submit">Book Appointment</button>
+        </form>
+    </div>
+
+    <script>
+        // Load doctors list
+        fetch('backend/get_doctors.php')
+            .then(response => response.json())
+            .then(doctors => {
+                const select = document.getElementById('doctor');
+                doctors.forEach(doctor => {
+                    const option = document.createElement('option');
+                    option.value = doctor.id;
+                    option.textContent = `${doctor.name} - ${doctor.specialization}`;
+                    select.appendChild(option);
+                });
+            });
+
+        // Check URL parameters for success/error messages
+        const urlParams = new URLSearchParams(window.location.search);
+        const success = urlParams.get('success');
+        const error = urlParams.get('error');
+
+        if (success === 'true') {
+            alert('Appointment booked successfully!');
+        } else if (error) {
+            alert('Error: ' + error);
+        }
+
+        function logout() {
+            fetch('backend/logout.php')
+                .then(() => {
+                    window.location.href = 'index.html';
+                });
+        }
+    </script>
+</body>
+</html>

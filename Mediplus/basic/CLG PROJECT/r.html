@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #0073e6;
+  margin: 0 10px;
+}
+
+/* Section Titles */
+section h2 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #0073e6;
+  padding-bottom: 5px;
+  color: #0073e6;
+}
+
+/* Job & Degree Styling */
+.job, .degree, .project {
+  margin-bottom: 20px;
+}
+
+.job h3, .degree h3 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "•";
+  color: #0073e6;
+  margin-right: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #777;
+}
+
+</style>
+<body>
+  <div class="container">
+    <header>
+      <h1>Dr. John Smith</h1>
+      <p>Cardiologist</p>
+      <div class="contact">
+        <a href="mailto:john.doe@example.com">john.doe@example.com</a> | 
+        <a href="tel:+1234567890">+1 234 567 890</a> | 
+        <a href="https://linkedin.com/in/johndoe" target="_blank">LinkedIn</a>
+      </div>
+    </header>
+
+    <section class="summary">
+      <h2>Summary</h2>
+      <p>A passionate software engineer with 5+ years of experience in building scalable web applications. Expertise in JavaScript, React, and CSS, with a strong focus on user experience and performance optimization.</p>
+    </section>
+
+    <section class="experience">
+      <h2>Work Experience</h2>
+      <div class="job">
+        <h3>Senior Cardiologist</h3>
+        <p>ABC Corp | Jan 2020 – Present</p>
+        <ul>
+          <li>Developed and maintained front-end features for a large-scale e-commerce platform using React and Redux.</li>
+          <li>Collaborated with cross-functional teams to deliver high-performance UI components.</li>
+          <li>Reduced page load times by 30% through code optimization and asset management.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Web Developer</h3>
+        <p>XYZ Solutions | Aug 2017 – Dec 2019</p>
+        <ul>
+          <li>Built responsive websites using HTML, CSS, and JavaScript frameworks like Bootstrap.</li>
+          <li>Implemented SEO strategies, increasing organic traffic by 25%.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="education">
+      <h2>Education</h2>
+      <div class="degree">
+        <h3>Bachelor of Computer Science</h3>
+        <p>University of Technology | Graduated: 2017</p>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>JavaScript, React, Redux</li>
+        <li>HTML5, CSS3, Sass</li>
+        <li>Git, GitHub, Agile Development</li>
+      </ul>
+    </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio website built with HTML, CSS, and JavaScript showcasing my projects and blogs.</p>
+      </div>
+
+      <div class="project">
+        <h3>Task Manager App</h3>
+        <p>A productivity app to manage tasks, built using React and Firebase for real-time updates.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2024 John Doe. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

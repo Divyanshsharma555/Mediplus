@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Booking</title>
+    <link rel="icon" href="images/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="doc.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f3f4f6;
+      padding-top: 80px;
+      margin: 0;
+      background-image: url(https://hmsapp.in/hospital/images/Backround.jpg);
+      background-size: cover;
+    }
+
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    #navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 1rem 0;
+    }
+
+    #navbar ul {
+      display: flex;
+      list-style-type: none;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    #navbar ul li {
+      padding: 0.5rem 1rem;
+    }
+
+    #navbar ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #333;
+      font-size: 1.1em;
+      transition: color 0.3s ease, transform 0.3s;
+    }
+
+    #navbar ul li a:hover {
+      color: #34c759; 
+      transform: translateY(-2px); 
+    }
+
+    .book {
+      border-radius: 10px;
+      padding: 30px;
+      width: 500px;
+      background-color: transparent;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      
+    }
+    .book:hover {
+      transform: translateY(-10px);
+      transition-duration: 1s;
+      box-shadow: 2px 3px 23px gray;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 1em;
+    }
+
+    .book label {
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    #name,
+    #disease,
+    #time,
+    #date {
+      width: 100%;
+      padding: 15px;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      background-color: transparent;
+    }
+
+    #name:hover,
+    #disease:hover,
+    #time:hover,
+    #date:hover {
+      background-color: #93acf1;
+      transform: translateY(-3px);
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    #btn {
+      background-color: #34c759;
+      color: white;
+      padding: 12px 20px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    #btn:hover {
+      background-color: #28a745;
+      transform: translateY(-3px);
+      box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+  <body>
+    <!-- <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Mediplus</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="doc.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    -->
+
+    <header>
+      <nav id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="doc.html">Doctors</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <form action="">
+      <div class="book">
+        <center>
+          <h1>Book Appointment</h1>
+        </center>
+        <label for="name">Name</label>
+        <input type="text" required id="name" /><br />
+
+        <label for="disease">Disease</label>
+        <input type="text" id="disease" /><br />
+
+        <label for="date">Date Slot</label>
+        <input type="date" id="date" /><br />
+
+        <label for="time">Time Slot</label>
+        <input type="time" id="time" /><br />
+
+        
+
+        <center>
+          <button id="btn">Book Now</button>
+        </center>
+      </div>
+    </form>
+  </body>
+</html>
